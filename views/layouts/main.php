@@ -16,6 +16,8 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+        <link type="text/css" rel="stylesheet" media="all" href="/proyecto/web/css/chat.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="/proyecto/web/css/screen.css" />
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
@@ -38,6 +40,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => "Online User's", 'url' => ['/chat/index']],
             ['label' => 'About', 'url' => ['/site/about'], 'visible' => Yii::$app->user->isGuest],
             ['label' => 'Contact', 'url' => ['/site/contact'], 'visible' => Yii::$app->user->isGuest],
             ['label' => 'Register', 'url' => ['/site/register'], 'visible' => Yii::$app->user->isGuest],
@@ -69,7 +72,8 @@ AppAsset::register($this);
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
-
+        <script type="text/javascript" src="/proyecto/web/js/jquery.js"></script>
+        <script type="text/javascript" src="/proyecto/web/js/chat.js"></script>
 <?php $this->endBody() ?>
 </body>
 </html>
